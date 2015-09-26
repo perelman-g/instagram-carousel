@@ -1,12 +1,8 @@
 import { Reapp, React, View, Button, Input, Gallery} from 'reapp-kit'
-import Superagent from 'superagent';
-import SuperagentP from 'superagent-jsonp';
+import superagent from 'superagent';
+require('superagent-jsonp')(superagent);
 
-//DO NOT COPY MY KEY, Thanks :)
-
-let tag='cat';
 const access_token='2212900159.1fb234f.8680b8ed745b439fb61fda3e7bdb88c0';
-const searchUrl=`https://api.instagram.com/v1/tags/${tag}/media/recent?access_token=${access_token}`;
 
 class App extends React.Component {
   constructor(props) {
@@ -16,30 +12,28 @@ class App extends React.Component {
 
   handleSearch(e) {
     let self = this
-    tag = this.refs.search.getDOMNode().value;
+    let tag = this.refs.search.getDOMNode().value;
+    let searchUrl=`https://api.instagram.com/v1/tags/${tag}/media/recent?access_token=${access_token}`;
     console.log(">< searchUrl", searchUrl)
 
-    Superagent
+    superagent
     .get(searchUrl).jsonp()
     .end(function(err, res){
       console.log(res);
-      if (! (res.meta.code === 200 && res.data)) return;
-      // Calling the end function will send the request
+      if (! (res.body.meta.code === 200 && res.body.data)) return;
       self.setState({
-        photos: res.data.map(function(image){
+        photos: res.body.data.map(function(image){
           return image.images.standard_resolution.url;
         })
       });
-
-
     })
   }
 
   render() {
     let { photos } = this.state;
     return (
-      <View title="reapp-flicker">
-        <Input ref="search" placeholder="Enter your search" styles={{
+      <View title="instagram tag carousel">
+        <Input ref="search" placeholder="Enter tag" value='minpin' styles={{
             input: {
               margin: '0 0 10px 0'
             }
