@@ -13,7 +13,8 @@
   "dependencies": {
     "react": "0.13.2",
     "reapp-kit": "^1.2.0",
-    "superagent": "^1.2.0"
+    "superagent": "^1.2.0",
+    "superagent-jsonp": "0.0.5"
   },
   "devDependencies": {
     "eslint": "^0.22.1",

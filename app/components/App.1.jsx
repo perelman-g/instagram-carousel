@@ -1,12 +1,11 @@
 import { Reapp, React, View, Button, Input, Gallery} from 'reapp-kit'
 import Superagent from 'superagent';
-import SuperagentP from 'superagent-jsonp';
 
 //DO NOT COPY MY KEY, Thanks :)
+const key = '415b05c962448acbef9d99d4ea530aa9';
+const base = `https://api.flickr.com/services/rest/?api_key=${key}&
+format=rest&format=json&nojsoncallback=1`;
 
-let tag='cat';
-const access_token='2212900159.1fb234f.8680b8ed745b439fb61fda3e7bdb88c0';
-const searchUrl=`https://api.instagram.com/v1/tags/${tag}/media/recent?access_token=${access_token}`;
 
 class App extends React.Component {
   constructor(props) {
@@ -16,18 +15,20 @@ class App extends React.Component {
 
   handleSearch(e) {
     let self = this
-    tag = this.refs.search.getDOMNode().value;
+    //  in render, <Input ref="search"> so it could be referended
+    let searchText = this.refs.search.getDOMNode().value;
+    let searchUrl = `${base}&method=flickr.photos.search&text=${searchText}
+    &per_page=10&page=1`
     console.log(">< searchUrl", searchUrl)
 
     Superagent
-    .get(searchUrl).jsonp()
+    .get(`${base}&method=flickr.photos.search&text=${searchText}&per_page=10&page=1`)
     .end(function(err, res){
-      console.log(res);
-      if (! (res.meta.code === 200 && res.data)) return;
+      if (! (res.status === 200 && res.body.photos)) return;
       // Calling the end function will send the request
       self.setState({
-        photos: res.data.map(function(image){
-          return image.images.standard_resolution.url;
+        photos: res.body.photos.photo.map(function(image){
+          return `https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`;
         })
       });
 

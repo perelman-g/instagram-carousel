@@ -1,0 +1,97 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 warn package.json reapp-flicker@1.0.0 No repository field.
+5 verbose readDependencies using package.json deps
+6 verbose install where, deps [ '/Users/ruslan/Documents/_code_/instagram-tagsearch',
+6 verbose install   [ 'react',
+6 verbose install     'reapp-kit',
+6 verbose install     'superagent-jsonp',
+6 verbose install     'eslint',
+6 verbose install     'eslint-plugin-react' ] ]
+7 info preinstall reapp-flicker@1.0.0
+8 verbose readDependencies using package.json deps
+9 verbose already installed skipping react@0.13.2 /Users/ruslan/Documents/_code_/instagram-tagsearch
+10 verbose already installed skipping reapp-kit@^1.2.0 /Users/ruslan/Documents/_code_/instagram-tagsearch
+11 verbose cache add [ 'superagent-jsonp@^1.2.0', null ]
+12 verbose cache add name=undefined spec="superagent-jsonp@^1.2.0" args=["superagent-jsonp@^1.2.0",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'superagent-jsonp@^1.2.0',
+13 verbose parsed url   path: 'superagent-jsonp@^1.2.0',
+13 verbose parsed url   href: 'superagent-jsonp@^1.2.0' }
+14 verbose already installed skipping eslint@^0.22.1 /Users/ruslan/Documents/_code_/instagram-tagsearch
+15 verbose already installed skipping eslint-plugin-react@^2.5.0 /Users/ruslan/Documents/_code_/instagram-tagsearch
+16 verbose cache add name="superagent-jsonp" spec="^1.2.0" args=["superagent-jsonp","^1.2.0"]
+17 verbose parsed url { protocol: null,
+17 verbose parsed url   slashes: null,
+17 verbose parsed url   auth: null,
+17 verbose parsed url   host: null,
+17 verbose parsed url   port: null,
+17 verbose parsed url   hostname: null,
+17 verbose parsed url   hash: null,
+17 verbose parsed url   search: null,
+17 verbose parsed url   query: null,
+17 verbose parsed url   pathname: '^1.2.0',
+17 verbose parsed url   path: '^1.2.0',
+17 verbose parsed url   href: '^1.2.0' }
+18 verbose addNamed [ 'superagent-jsonp', '^1.2.0' ]
+19 verbose addNamed [ null, '>=1.2.0-0 <2.0.0-0' ]
+20 silly lockFile e600f137-superagent-jsonp-1-2-0 superagent-jsonp@^1.2.0
+21 verbose lock superagent-jsonp@^1.2.0 /Users/ruslan/.npm/e600f137-superagent-jsonp-1-2-0.lock
+22 silly addNameRange { name: 'superagent-jsonp',
+22 silly addNameRange   range: '>=1.2.0-0 <2.0.0-0',
+22 silly addNameRange   hasData: false }
+23 verbose request where is /superagent-jsonp
+24 verbose request registry https://registry.npmjs.org/
+25 verbose request id 5de86169a869d27a
+26 verbose url raw /superagent-jsonp
+27 verbose url resolving [ 'https://registry.npmjs.org/', './superagent-jsonp' ]
+28 verbose url resolved https://registry.npmjs.org/superagent-jsonp
+29 verbose request where is https://registry.npmjs.org/superagent-jsonp
+30 info trying registry request attempt 1 at 00:00:41
+31 verbose etag "E0AYJBPI56G6JWXGGIAPE1OP8"
+32 http GET https://registry.npmjs.org/superagent-jsonp
+33 http 304 https://registry.npmjs.org/superagent-jsonp
+34 silly registry.get cb [ 304,
+34 silly registry.get   { date: 'Sat, 26 Sep 2015 23:00:42 GMT',
+34 silly registry.get     via: '1.1 varnish',
+34 silly registry.get     'cache-control': 'max-age=60',
+34 silly registry.get     etag: '"E0AYJBPI56G6JWXGGIAPE1OP8"',
+34 silly registry.get     age: '0',
+34 silly registry.get     connection: 'keep-alive',
+34 silly registry.get     'x-served-by': 'cache-lhr6334-LHR',
+34 silly registry.get     'x-cache': 'MISS',
+34 silly registry.get     'x-cache-hits': '0',
+34 silly registry.get     'x-timer': 'S1443308442.607175,VS0,VE89',
+34 silly registry.get     vary: 'Accept' } ]
+35 verbose etag https://registry.npmjs.org/superagent-jsonp from cache
+36 silly addNameRange number 2 { name: 'superagent-jsonp',
+36 silly addNameRange   range: '>=1.2.0-0 <2.0.0-0',
+36 silly addNameRange   hasData: true }
+37 silly addNameRange versions [ 'superagent-jsonp',
+37 silly addNameRange   [ '0.0.1', '0.0.2', '0.0.3', '0.0.4', '0.0.5' ] ]
+38 silly lockFile e600f137-superagent-jsonp-1-2-0 superagent-jsonp@^1.2.0
+39 silly lockFile e600f137-superagent-jsonp-1-2-0 superagent-jsonp@^1.2.0
+40 error notarget No compatible version found: superagent-jsonp@'>=1.2.0-0 <2.0.0-0'
+40 error notarget Valid install targets:
+40 error notarget ["0.0.1","0.0.2","0.0.3","0.0.4","0.0.5"]
+40 error notarget
+40 error notarget This is most likely not a problem with npm itself.
+40 error notarget In most cases you or one of your dependencies are requesting
+40 error notarget a package version that doesn't exist.
+41 error System Darwin 14.5.0
+42 error command "node" "/usr/local/bin/npm" "install"
+43 error cwd /Users/ruslan/Documents/_code_/instagram-tagsearch
+44 error node -v v0.10.32
+45 error npm -v 1.4.28
+46 error code ETARGET
+47 verbose exit [ 1, true ]
