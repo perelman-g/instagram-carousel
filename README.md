@@ -9,7 +9,7 @@
 ## set up
 ```shellscript
 sudo npm install -g reapp
-cd reapp-flicker
+cd insta-carousel
 npm install
 reapp run
 ```
