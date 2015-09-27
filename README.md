@@ -1,4 +1,4 @@
-#A Flicker React Client
+#Instagram Carousel ReactJS Client
 
 ## about
 - reactjs (client react)
