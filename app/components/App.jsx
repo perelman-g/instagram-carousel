@@ -2,7 +2,7 @@ import { Reapp, React, View, Button, Input, Gallery} from 'reapp-kit'
 import superagent from 'superagent';
 require('superagent-jsonp')(superagent);
 
-const access_token='2212900159.1fb234f.8680b8ed745b439fb61fda3e7bdb88c0';
+const access_token='YOUR_INSTAGRAM_API_ACCESS_TOKEN';
 
 class App extends React.Component {
   constructor(props) {
